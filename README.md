@@ -20,9 +20,9 @@ String and returns the array to the calling environment.
 * Integer ndays    ---  how many days is your threshold
 * Date    date     ---  what date are you comparing
 
-'''
+```
      Boolean expired = isOlderThan(15,'15-September-2019')
-'''
+```
 
 Returns true if 15-September-2019 was more than 15 days ago.
 
