@@ -30,3 +30,77 @@ Returns true if 15-September-2019 was more than 15 days ago.
 
 ##### Parameters
 
+* String bucket
+
+Lists the contents of an S3 bucket and returns the contents in an array of
+type com.tenna.ci.structs.aws.S3DirEntry which is documented later in this
+document.
+
+```
+   my bucket_list = s3Ls('s3://mybucket/subdir')
+
+```
+
+#### s3Rm
+
+Removes an entry from an S3 bucket.
+
+
+##### Parameters
+
+* String bucket  -- top of the desired bucket
+* String path    -- entry withing the bucket
+
+```
+
+    s3Rm('s3://mybucket','somefile.txt')
+
+```
+
+#### sendToS3
+
+Sends a local file to the S3 bucket of choice
+
+##### Parameters
+
+* file    -- name (path) of the local file
+* bucket  -- name of the desired bucket
+* (optional paramter) path  (default="/") subpath within a bucket.
+
+```
+    # file sent to the top of a bucket
+    sendToS3('mydocument.docx','s3://mydocuments')
+
+    # file sent to a subdirectory of a bucket
+    sendToS3('sql-backups.sql.gz','s3://mybackups','/weekly/')
+
+```
+
+## Data Structures
+
+### Package com.tenna.ci.structs.aws
+
+#### S3DirEntry
+
+Contains information about a directory entry in an s3 bucket and/or subpath.
+
+##### Members
+
+* Integer size    -- size of the file in bytes
+* Date    createDate  -- when the file was uploaded
+* String  name        -- the file's name
+
+#### S3Directory
+
+Contains an S3 directory
+
+##### Methods
+
+* void parse(String[] lines)
+
+Takes the raw output of a an 's3cmd s3 ls' command and parses it into an
+ArrayList<S3DirEntry> structure.
+
+##### Members
+
+* ArrayList<S3DirEntry>
