@@ -104,3 +104,15 @@ ArrayList<S3DirEntry> structure.
 ##### Members
 
 * ArrayList<S3DirEntry>
+
+```
+
+    import com.tenna.ci.structs.s3.S3Directory
+    |
+    hand waviumm 
+    |
+    S3Directory bucketList = s3Ls()
+
+
+```
+
