@@ -1,7 +1,7 @@
 def String[] call() {
-  def String retval = {
+  def String retval = [
      "pberghold@tenna.com","peter@berghold.net"
-  }
+  ]
 
   return retval
 }	 
