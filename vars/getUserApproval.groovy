@@ -3,7 +3,7 @@ def Boolean call(String, promptid,String prompt_text,
   try {
     Boolean retval = input( id: promptid,
       message: prompt_text,
-      [ $class 'BooleanParameterDefinition',
+      [ $class: 'BooleanParameterDefinition',
         defaultValue: false,
         description: inquiry_text
       ]
