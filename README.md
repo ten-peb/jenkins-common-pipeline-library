@@ -8,6 +8,35 @@ of these exist in this library
 
 ### Callable routines
 
+#### devopsTeam
+
+##### RETURNS
+
+Array of String representing the email addresses of the DevOps team. Currently consists of two members, Luke Douglas and Peter Berghold.
+
+##### Params
+
+NONE
+
+#### doExecCapture
+
+Executes a command and returns an array of strings of the output.
+
+##### RETURNS
+
+Array of String with results of running command passed.
+
+##### Params
+
+###### String command  -- command to be run
+
+```
+
+   def String[] scrape = doExecCapture('docker ps')
+
+```
+
+
 #### doLs
 
 Runs the Unix/Linux "ls" command and caputures the results in an array of
