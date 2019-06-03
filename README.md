@@ -12,6 +12,15 @@ of these exist in this library
 
 ##### RETURNS
 
+Array of String of email addresses for the "DevOps Team."  Currently only returns a single address.
+
+```
+        sendEmail(devOpsTeam(),"Something went wrong",whatHappened)
+
+```
+
+##### RETURNS
+
 Array of String representing the email addresses of the DevOps team. Currently consists of two members, Luke Douglas and Peter Berghold.
 
 ##### Params
@@ -85,6 +94,11 @@ Removes an entry from an S3 bucket.
     s3Rm('s3://mybucket','somefile.txt')
 
 ```
+#### sendEmail
+
+#### sendFailureEmail
+
+
 
 #### sendToS3
 
@@ -104,6 +118,7 @@ Sends a local file to the S3 bucket of choice
     sendToS3('sql-backups.sql.gz','s3://mybackups','/weekly/')
 
 ```
+
 
 ## Data Structures
 
