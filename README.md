@@ -96,9 +96,32 @@ Removes an entry from an S3 bucket.
 ```
 #### sendEmail
 
+#### Parameters
+
+* String[] who   -- list of recipients
+* String   subject  -- what is this email about?
+* String   body     -- what do you have to say?
+
+```
+
+     String[]   emailText = [
+        "Lorem ipsum convallis erat duis lobortis convallis curae, class viverra integer sed posuere tempus rhoncus nostra, mattis nullam et tincidunt egestas hendrerit.",
+	"Semper erat elit vel mattis taciti cras nec, ligula vel maecenas dui primis et enim, ultrices augue proin luctus potenti malesuada fames luctus habitant rhoncus purus nostra leo aliquam cras donec fringilla conubia nisi elit.",
+	"Nunc ultricies feugiat etiam nam cubilia diam ornare molestie feugiat aliquet sit, sociosqu mollis sollicitudin amet sollicitudin consequat molestie tempus sit ligula, congue etiam pretium ad ante dapibus pulvinar porttitor duis vulputate."
+	]
+
+        sendEmail(qaTeam(),"Lorem ipsum convallis",emailText.join("\n"))
+
+```
+
 #### sendFailureEmail
 
+Generates a canned email to inform of a failed build.
 
+```
+        sendFailureEmail()
+
+```
 
 #### sendToS3
 
